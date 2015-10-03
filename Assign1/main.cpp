@@ -34,10 +34,12 @@
 #include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <OpengL/gl.h>
+#include <OpenGL/gl.h>
 #include <GLUT/glut.h>
+#include <OpenGL/glu.h>
 
 void display(void){
+    
     glPointSize(10);
     glBegin(GL_POINTS);
     glVertex2f(-.6f, -.6f);
@@ -48,24 +50,65 @@ void display(void){
 
 
 void mouse(int btn, int state, int x, int y){
+    
+    y = 600 - y;
+    
     switch (btn) {
         case GLUT_LEFT_BUTTON:
             if (state == GLUT_DOWN) {
+                glBegin(GL_POINTS);
                 glColor3f(.0f, .0f, 1.0f);
+                glEnd();
             }
-            break;
-            
-        default:
-            break;
     }
+    
+    glFlush();
+        
+    
 }
 
+void motion(int x, int y){
+    y = 600 - y;
+    glBegin(GL_POINTS);
+    glVertex2i(x, y);
+    glEnd();
+    glFlush();
+}
+
+
+void glutCallbacks(){
+    glutDisplayFunc(display);
+    glutMouseFunc(mouse);
+    glutMotionFunc(motion);
+    
+}
 
 void timerRedisplay(int value){
     glutTimerFunc(32, timerRedisplay, 0);
     display();
 }
 
+int main(int argc, char** argv){
+    glutInit(&argc, argv);
+    
+    glutInitWindowPosition(0, 0);
+    glutInitWindowSize(600, 600);
+    glutCreateWindow("JJ");
+    
+    glutDisplayFunc(display);
+    
+    glutMouseFunc(mouse);
+    
+    glutMotionFunc(motion);
+    
+    gluOrtho2D(0, 600, 0, 600);
+    
+    timerRedisplay(0);
+    
+    glutMainLoop();
+    
+    return (0);
+}
 
 
 
