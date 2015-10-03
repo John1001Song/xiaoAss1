@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E8B701F91BC06EEF003FC0E9 /* 2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B701F81BC06EEF003FC0E9 /* 2.cpp */; settings = {ASSET_TAGS = (); }; };
 		E8B701FB1BC06F09003FC0E9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B701FA1BC06F09003FC0E9 /* OpenGL.framework */; };
 		E8B701FD1BC06F0F003FC0E9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B701FC1BC06F0F003FC0E9 /* GLUT.framework */; };
 		E8B702001BC0700E003FC0E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B701FE1BC0700E003FC0E9 /* main.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -27,8 +26,6 @@
 
 /* Begin PBXFileReference section */
 		E8B701ED1BC06EA8003FC0E9 /* Assign1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assign1; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8B701F71BC06EEF003FC0E9 /* 2Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = 2Header.h; path = ../../../../../../../../3GC3_test/rEAL_assign1/Real_Assign1/2Header.h; sourceTree = "<group>"; };
-		E8B701F81BC06EEF003FC0E9 /* 2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = 2.cpp; path = ../../../../../../../../3GC3_test/rEAL_assign1/Real_Assign1/2.cpp; sourceTree = "<group>"; };
 		E8B701FA1BC06F09003FC0E9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E8B701FC1BC06F0F003FC0E9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		E8B701FE1BC0700E003FC0E9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -69,8 +66,6 @@
 		E8B701EF1BC06EA8003FC0E9 /* Assign1 */ = {
 			isa = PBXGroup;
 			children = (
-				E8B701F71BC06EEF003FC0E9 /* 2Header.h */,
-				E8B701F81BC06EEF003FC0E9 /* 2.cpp */,
 				E8B701FE1BC0700E003FC0E9 /* main.cpp */,
 				E8B701FF1BC0700E003FC0E9 /* header.h */,
 			);
@@ -134,7 +129,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8B702001BC0700E003FC0E9 /* main.cpp in Sources */,
-				E8B701F91BC06EEF003FC0E9 /* 2.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +245,7 @@
 				E8B701F61BC06EA8003FC0E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

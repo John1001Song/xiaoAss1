@@ -38,12 +38,11 @@
 #include <GLUT/glut.h>
 #include <OpenGL/glu.h>
 
+
+
 void display(void){
     
-    glPointSize(10);
-    glBegin(GL_POINTS);
-    glVertex2f(-.6f, -.6f);
-    glEnd();
+   
     
     glFlush();
 }
@@ -57,7 +56,7 @@ void mouse(int btn, int state, int x, int y){
         case GLUT_LEFT_BUTTON:
             if (state == GLUT_DOWN) {
                 glBegin(GL_POINTS);
-                glColor3f(.0f, .0f, 1.0f);
+                glColor3f(1.0f, .0f, 1.0f);
                 glEnd();
             }
     }
