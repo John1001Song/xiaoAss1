@@ -43,11 +43,56 @@
 
 void display(void){
     
-    //glClearColor(1, 1, 1, 1);
+    glClearColor(1, 1, 1, 0);
     //glClear(GL_COLOR_BUFFER_BIT);
     
     glFlush();
 }
+
+
+// create point
+
+void point(int x, int y){
+    y = 600 - y;
+    glPointSize(3);
+    glBegin(GL_POINTS);
+        glVertex2i(x, y);
+    glEnd();
+    glFlush();
+}
+
+
+// line method
+
+int flag_line;
+int x1, y1, x2, y2;
+
+void setStartPoint(int btn, int state, int thisX, int thisY){
+    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        extern int x1, y1;
+        x1 = thisX;
+        y1 = 600 - thisY;
+    }
+}
+
+void setEndPoint(int btn, int state, int thisX, int thisY){
+    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        extern int x2, y2;
+        x2 = thisX;
+        y2 = 600 - thisY;
+    }
+}
+
+
+void drawLine(){
+    
+    
+}
+
+
+
+
+
 
 
 void mouse(int btn, int state, int x, int y){
@@ -114,7 +159,15 @@ void menu(int value){
         case 4:
             glColor3f(1, 1, 0);
             break;
+         
+        case 5:
+            glutMotionFunc(point);
+            break;
            
+        case 6:
+            drawLine();
+            break;
+            
         case 9:
             exit(0);
             break;
@@ -148,11 +201,6 @@ void initMenu(){
     
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
-
-
-// line method
-
-void drawLine(){}
 
 
 
