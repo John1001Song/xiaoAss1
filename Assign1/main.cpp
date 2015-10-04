@@ -107,21 +107,54 @@ void menu(int value){
             glColor3f(.0f, 1.0f, 0.0f);
             break;
             
+        case 3:
+            glColor3f(.5f, 0, .5f);
+            break;
+        
+        case 4:
+            glColor3f(1, 1, 0);
+            break;
+           
+        case 9:
+            exit(0);
+            break;
+            
         default:
             break;
     }
 }
 
 void initMenu(){
-    int id = glutCreateMenu(menu);
-    glutSetMenu(id);
     
+    int subColor = glutCreateMenu(menu);
     glutAddMenuEntry("Blue", 0);
     glutAddMenuEntry("Red", 1);
-    glutAddMenuEntry("green", 2);
+    glutAddMenuEntry("Green", 2);
+    glutAddMenuEntry("Purple", 3);
+    glutAddMenuEntry("Yellow", 4);
+    
+    int subShape = glutCreateMenu(menu);
+    glutAddMenuEntry("Point", 5);
+    glutAddMenuEntry("Line", 6);
+    glutAddMenuEntry("Rectangle", 7);
+    glutAddMenuEntry("Circle", 8);
+    
+    int mainMenuId = glutCreateMenu(menu);
+    glutAddSubMenu("Color", subColor);
+    glutAddSubMenu("Shape", subShape);
+    glutAddMenuEntry("Quit", 9);
+    
+    
     
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
+
+
+// line method
+
+void drawLine(){}
+
+
 
 
 
