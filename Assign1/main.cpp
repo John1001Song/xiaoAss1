@@ -40,9 +40,11 @@
 
 
 
+
 void display(void){
     
-   
+    //glClearColor(1, 1, 1, 1);
+    //glClear(GL_COLOR_BUFFER_BIT);
     
     glFlush();
 }
@@ -54,12 +56,12 @@ void mouse(int btn, int state, int x, int y){
     
     switch (btn) {
         case GLUT_LEFT_BUTTON:
-            if (state == GLUT_DOWN) {
+            if (state == GLUT_DOWN && GLUT_LEFT_BUTTON) {
                 glBegin(GL_POINTS);
-                glColor3f(1.0f, .0f, 1.0f);
+                glColor3f(1.0f, 1.0f, 1.0f);
                 glEnd();
             }
-    }
+            }
     
     glFlush();
         
@@ -87,12 +89,53 @@ void timerRedisplay(int value){
     display();
 }
 
+//set up menu
+
+void menu(int value){
+    printf("menu action\n");
+    
+    switch (value) {
+        case 0:
+            glColor3f(.0f, .0f, 1.0f);
+            break;
+            
+        case 1:
+            glColor3f(1.0f, 0.0f, .0f);
+            break;
+            
+        case 2:
+            glColor3f(.0f, 1.0f, 0.0f);
+            break;
+            
+        default:
+            break;
+    }
+}
+
+void initMenu(){
+    int id = glutCreateMenu(menu);
+    glutSetMenu(id);
+    
+    glutAddMenuEntry("Blue", 0);
+    glutAddMenuEntry("Red", 1);
+    glutAddMenuEntry("green", 2);
+    
+    glutAttachMenu(GLUT_RIGHT_BUTTON);
+}
+
+
+
 int main(int argc, char** argv){
     glutInit(&argc, argv);
     
+   // glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(0, 0);
     glutInitWindowSize(600, 600);
     glutCreateWindow("JJ");
+    
+    initMenu();
+    
+    
     
     glutDisplayFunc(display);
     
@@ -103,6 +146,8 @@ int main(int argc, char** argv){
     gluOrtho2D(0, 600, 0, 600);
     
     timerRedisplay(0);
+    
+    glClearColor(1, 1, 1, 1);
     
     glutMainLoop();
     
