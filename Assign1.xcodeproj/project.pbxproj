@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48F22C071BC1FD1D009664E7 /* Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F22C051BC1FD1D009664E7 /* Handler.cpp */; };
-		48F22C0A1BC1FE28009664E7 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F22C081BC1FE28009664E7 /* Point.cpp */; };
 		E8B701FB1BC06F09003FC0E9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B701FA1BC06F09003FC0E9 /* OpenGL.framework */; };
 		E8B701FD1BC06F0F003FC0E9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B701FC1BC06F0F003FC0E9 /* GLUT.framework */; };
-		E8B702001BC0700E003FC0E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B701FE1BC0700E003FC0E9 /* main.cpp */; };
+		E8B702001BC0700E003FC0E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B701FE1BC0700E003FC0E9 /* main.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,14 +25,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48F22C051BC1FD1D009664E7 /* Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Handler.cpp; sourceTree = "<group>"; };
-		48F22C061BC1FD1D009664E7 /* Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
-		48F22C081BC1FE28009664E7 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
-		48F22C091BC1FE28009664E7 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
 		E8B701ED1BC06EA8003FC0E9 /* Assign1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assign1; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B701FA1BC06F09003FC0E9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E8B701FC1BC06F0F003FC0E9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		E8B701FE1BC0700E003FC0E9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E8B701FF1BC0700E003FC0E9 /* header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				E8B701FE1BC0700E003FC0E9 /* main.cpp */,
-				48F22C051BC1FD1D009664E7 /* Handler.cpp */,
-				48F22C061BC1FD1D009664E7 /* Handler.h */,
-				48F22C081BC1FE28009664E7 /* Point.cpp */,
-				48F22C091BC1FE28009664E7 /* Point.h */,
+				E8B701FF1BC0700E003FC0E9 /* header.h */,
 			);
 			path = Assign1;
 			sourceTree = "<group>";
@@ -136,8 +128,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F22C0A1BC1FE28009664E7 /* Point.cpp in Sources */,
-				48F22C071BC1FD1D009664E7 /* Handler.cpp in Sources */,
 				E8B702001BC0700E003FC0E9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,10 +170,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -216,9 +206,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
