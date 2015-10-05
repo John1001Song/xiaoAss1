@@ -47,15 +47,13 @@ RectangleHandler rh = RectangleHandler();
 CircleHandler ch = CircleHandler();
 
 void display(void){
-    
     glClearColor(1, 1, 1, 0);
-    //glClear(GL_COLOR_BUFFER_BIT);
-    
+//    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(.0f, .0f, 1.0f);
     glFlush();
 }
 
 // create point
-
 void point(int x, int y){
     y = 600 - y;
     glPointSize(3);
@@ -65,45 +63,10 @@ void point(int x, int y){
     glFlush();
 }
 
-
-// line method
-
-//int flag_line;
-//int x1, y1, x2, y2;
-//
-//void setStartPoint(int btn, int state, int thisX, int thisY){
-//    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-//        extern int x1, y1;
-//        x1 = thisX;
-//        y1 = 600 - thisY;
-//    }
-//}
-//
-//void setEndPoint(int btn, int state, int thisX, int thisY){
-//    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-//        extern int x2, y2;
-//        x2 = thisX;
-//        y2 = 600 - thisY;
-//    }
-//}
-//
-//
-//void drawLine(){
-//    
-//    
-//}
-//
-
 void mouse(int btn, int state, int x, int y){
-    printf("mouse function called\n");
-    
-    switch (btn) {
-        case GLUT_LEFT_BUTTON:
-            if (state == GLUT_DOWN) {
-                point(x, y);
-            }
+    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+        point(x, y);
     }
-    
     glFlush();
 }
 
@@ -115,23 +78,14 @@ void motion(int x, int y){
     glFlush();
 }
 
-
-//void glutCallbacks(){
-//    glutDisplayFunc(display);
-//    glutMouseFunc(mouse);
-//    glutMotionFunc(motion);
-//}
-
 void timerRedisplay(int value){
     glutTimerFunc(32, timerRedisplay, 0);
     display();
 }
 
 //set up menu
-
 void menu(int value){
-    printf("menu action\n");
-    
+//    printf("menu action\n");
     switch (value) {
         case 0:
             glColor3f(.0f, .0f, 1.0f);
@@ -155,7 +109,7 @@ void menu(int value){
          
         case 5: // point
             h = &ph;
-            glutMotionFunc(point);
+//            glutMotionFunc(point);
             break;
            
         case 6:
@@ -164,6 +118,10 @@ void menu(int value){
             
         case 9:
             exit(0);
+            break;
+            
+        case 10:
+            glClear(GL_COLOR_BUFFER_BIT);
             break;
             
         default:
@@ -188,6 +146,7 @@ void initMenu(){
     int mainMenuId = glutCreateMenu(menu);
     glutAddSubMenu("Color", subColor);
     glutAddSubMenu("Shape", subShape);
+    glutAddMenuEntry("Clear", 10);
     glutAddMenuEntry("Quit", 9);
     
     glutAttachMenu(GLUT_RIGHT_BUTTON);
@@ -216,6 +175,8 @@ int main(int argc, char** argv){
     glClearColor(1, 1, 1, 1);
     
     glutMainLoop();
+    
+    h = &ph;
     
     return (0);
 }
