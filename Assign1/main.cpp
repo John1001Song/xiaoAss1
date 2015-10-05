@@ -46,6 +46,8 @@ LineHandler lh = LineHandler();
 RectangleHandler rh = RectangleHandler();
 CircleHandler ch = CircleHandler();
 
+std::stack<Point>* pStack = new std::stack<Point>();
+
 void display(void){
 //    glClearColor(1, 1, 1, 0);
 //    glClear(GL_COLOR_BUFFER_BIT);
@@ -53,28 +55,28 @@ void display(void){
 }
 
 // create point
-void point(int x, int y){
-    y = 600 - y;
-    glPointSize(3);
-    glBegin(GL_POINTS);
-        glVertex2i(x, y);
-    glEnd();
-    glFlush();
-}
+//void point(int x, int y){
+//    y = 600 - y;
+//    glPointSize(3);
+//    glBegin(GL_POINTS);
+//        glVertex2i(x, y);
+//    glEnd();
+//    glFlush();
+//}
 
 void mouse(int btn, int state, int x, int y){
     if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        point(x, y);
+        pStack->push(Point(x,y));
+        h->draw(pStack);
     }
     glFlush();
 }
 
 void motion(int x, int y){
-    y = 600 - y;
-    glBegin(GL_POINTS);
-    glVertex2i(x, y);
-    glEnd();
-    glFlush();
+    if(h == &ph) {
+        pStack->push(Point(x,y));
+        h->draw(pStack);
+    }
 }
 
 void timerRedisplay(int value){
@@ -111,7 +113,8 @@ void menu(int value){
 //            glutMotionFunc(point);
             break;
            
-        case 6:
+        case 6: // line
+            h = &lh;
 //            drawLine();
             break;
             
@@ -176,6 +179,7 @@ int main(int argc, char** argv){
     h = &ph;
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0, 0, 1);
+    glPointSize(2);
     
     glutMainLoop();
     

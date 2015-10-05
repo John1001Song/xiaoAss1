@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48F22C071BC1FD1D009664E7 /* Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F22C051BC1FD1D009664E7 /* Handler.cpp */; };
 		48F22C0A1BC1FE28009664E7 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F22C081BC1FE28009664E7 /* Point.cpp */; };
 		E8B701FB1BC06F09003FC0E9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B701FA1BC06F09003FC0E9 /* OpenGL.framework */; };
 		E8B701FD1BC06F0F003FC0E9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B701FC1BC06F0F003FC0E9 /* GLUT.framework */; };
@@ -27,7 +26,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		48F22C051BC1FD1D009664E7 /* Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Handler.cpp; sourceTree = "<group>"; };
 		48F22C061BC1FD1D009664E7 /* Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
 		48F22C081BC1FE28009664E7 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		48F22C091BC1FE28009664E7 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				E8B701FE1BC0700E003FC0E9 /* main.cpp */,
-				48F22C051BC1FD1D009664E7 /* Handler.cpp */,
 				48F22C061BC1FD1D009664E7 /* Handler.h */,
 				48F22C081BC1FE28009664E7 /* Point.cpp */,
 				48F22C091BC1FE28009664E7 /* Point.h */,
@@ -137,7 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F22C0A1BC1FE28009664E7 /* Point.cpp in Sources */,
-				48F22C071BC1FD1D009664E7 /* Handler.cpp in Sources */,
 				E8B702001BC0700E003FC0E9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
