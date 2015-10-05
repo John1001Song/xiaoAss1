@@ -47,9 +47,8 @@ RectangleHandler rh = RectangleHandler();
 CircleHandler ch = CircleHandler();
 
 void display(void){
-    glClearColor(1, 1, 1, 0);
+//    glClearColor(1, 1, 1, 0);
 //    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(.0f, .0f, 1.0f);
     glFlush();
 }
 
@@ -174,9 +173,11 @@ int main(int argc, char** argv){
     
     glClearColor(1, 1, 1, 1);
     
-    glutMainLoop();
-    
     h = &ph;
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f(0, 0, 1);
+    
+    glutMainLoop();
     
     return (0);
 }
