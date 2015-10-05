@@ -85,8 +85,35 @@ void setEndPoint(int btn, int state, int thisX, int thisY){
 
 
 void drawLine(){
+    glutMouseFunc(setStartPoint);
+    glutMouseFunc(setEndPoint);
     
+    int dx, dy, incrE, incrNE, x, y, d;
+    dx = x2 - x1;
+    dy = y2 - y1;
+    incrE = dy*2;
+    incrNE = 2*dy - 2*dx;
+    d = 2*dy - dx;
     
+    x = x1;
+    y = y1;
+    point(x, y);
+    glutMotionFunc(point);
+    
+    while (x < x2) {
+        if (d <= 0) {
+            d += incrE;
+            x++;
+        }else{
+            d += incrNE;
+            x++;
+            y++;
+        }
+        point(x, y);
+        glutMotionFunc(point);
+    }
+    
+    glFlush();
 }
 
 
