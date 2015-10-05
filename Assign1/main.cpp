@@ -31,15 +31,20 @@
  
  */
 
-#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <OpenGL/gl.h>
 #include <GLUT/glut.h>
 #include <OpenGL/glu.h>
+#include "Handler.h"
 
+int WINDOW_SIZE = 600;
 
-
+Handler* h;
+PointHandler ph = PointHandler();
+LineHandler lh = LineHandler();
+RectangleHandler rh = RectangleHandler();
+CircleHandler ch = CircleHandler();
 
 void display(void){
     
@@ -48,7 +53,6 @@ void display(void){
     
     glFlush();
 }
-
 
 // create point
 
@@ -64,53 +68,43 @@ void point(int x, int y){
 
 // line method
 
-int flag_line;
-int x1, y1, x2, y2;
-
-void setStartPoint(int btn, int state, int thisX, int thisY){
-    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        extern int x1, y1;
-        x1 = thisX;
-        y1 = 600 - thisY;
-    }
-}
-
-void setEndPoint(int btn, int state, int thisX, int thisY){
-    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-        extern int x2, y2;
-        x2 = thisX;
-        y2 = 600 - thisY;
-    }
-}
-
-
-void drawLine(){
-    
-    
-}
-
-
-
-
-
-
+//int flag_line;
+//int x1, y1, x2, y2;
+//
+//void setStartPoint(int btn, int state, int thisX, int thisY){
+//    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+//        extern int x1, y1;
+//        x1 = thisX;
+//        y1 = 600 - thisY;
+//    }
+//}
+//
+//void setEndPoint(int btn, int state, int thisX, int thisY){
+//    if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+//        extern int x2, y2;
+//        x2 = thisX;
+//        y2 = 600 - thisY;
+//    }
+//}
+//
+//
+//void drawLine(){
+//    
+//    
+//}
+//
 
 void mouse(int btn, int state, int x, int y){
-    
-    y = 600 - y;
+    printf("mouse function called\n");
     
     switch (btn) {
         case GLUT_LEFT_BUTTON:
-            if (state == GLUT_DOWN && GLUT_LEFT_BUTTON) {
-                glBegin(GL_POINTS);
-                glColor3f(1.0f, 1.0f, 1.0f);
-                glEnd();
+            if (state == GLUT_DOWN) {
+                point(x, y);
             }
-            }
+    }
     
     glFlush();
-        
-    
 }
 
 void motion(int x, int y){
@@ -122,12 +116,11 @@ void motion(int x, int y){
 }
 
 
-void glutCallbacks(){
-    glutDisplayFunc(display);
-    glutMouseFunc(mouse);
-    glutMotionFunc(motion);
-    
-}
+//void glutCallbacks(){
+//    glutDisplayFunc(display);
+//    glutMouseFunc(mouse);
+//    glutMotionFunc(motion);
+//}
 
 void timerRedisplay(int value){
     glutTimerFunc(32, timerRedisplay, 0);
@@ -160,12 +153,13 @@ void menu(int value){
             glColor3f(1, 1, 0);
             break;
          
-        case 5:
+        case 5: // point
+            h = &ph;
             glutMotionFunc(point);
             break;
            
         case 6:
-            drawLine();
+//            drawLine();
             break;
             
         case 9:
@@ -178,7 +172,6 @@ void menu(int value){
 }
 
 void initMenu(){
-    
     int subColor = glutCreateMenu(menu);
     glutAddMenuEntry("Blue", 0);
     glutAddMenuEntry("Red", 1);
@@ -197,14 +190,8 @@ void initMenu(){
     glutAddSubMenu("Shape", subShape);
     glutAddMenuEntry("Quit", 9);
     
-    
-    
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
-
-
-
-
 
 int main(int argc, char** argv){
     glutInit(&argc, argv);
@@ -215,8 +202,6 @@ int main(int argc, char** argv){
     glutCreateWindow("JJ");
     
     initMenu();
-    
-    
     
     glutDisplayFunc(display);
     
@@ -234,46 +219,3 @@ int main(int argc, char** argv){
     
     return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
