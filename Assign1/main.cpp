@@ -110,12 +110,18 @@ void menu(int value){
          
         case 5: // point
             h = &ph;
-//            glutMotionFunc(point);
             break;
            
         case 6: // line
             h = &lh;
-//            drawLine();
+            break;
+            
+        case 7: // rectangle
+            h = &rh;
+            break;
+            
+        case 8: // circle
+            h = &ch;
             break;
             
         case 9:
@@ -176,7 +182,7 @@ int main(int argc, char** argv){
     
     glClearColor(1, 1, 1, 1);
     
-    h = &ph;
+    h = &lh;
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0, 0, 1);
     glPointSize(2);
