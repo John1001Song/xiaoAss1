@@ -132,7 +132,7 @@ public:
         int d = 2 * dy - dx;
         int einc = dy * 2;
         int edec = 2 * dy - 2 * dx;
-        printf("dx=%d,dy=%d\n", dx, dy);
+//        printf("dx=%d,dy=%d\n", dx, dy);
         
         glBegin(GL_POINTS);
         
@@ -190,7 +190,7 @@ public:
         Point eP1 = Point(p1.x, p2.y);
         Point eP2 = Point(p2.x, p1.y);
         
-        LineHandler lineForRec = *new LineHandler();
+        LineHandler lineForRec = LineHandler();
         
         stack->push(eP1);
         stack->push(p1);
@@ -207,9 +207,7 @@ public:
         stack->push(p2);
         stack->push(eP1);
         lineForRec.draw(stack);
-        
     }
-
 };
 
 class CircleHandler : public Handler {

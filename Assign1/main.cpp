@@ -46,7 +46,7 @@ LineHandler lh = LineHandler();
 RectangleHandler rh = RectangleHandler();
 CircleHandler ch = CircleHandler();
 
-std::stack<Point>* pStack = new std::stack<Point>();
+std::stack<Point>* pStack;
 
 void display(void){
 //    glClearColor(1, 1, 1, 0);
@@ -84,6 +84,20 @@ void timerRedisplay(int value){
     display();
 }
 
+void exit() {
+    delete pStack;
+    exit(0);
+}
+
+void randomColor() {
+    float r, g, b;
+    r = (rand()%1000)*1.0/1000;
+    g = (rand()%1000)*1.0/1000;
+    b = (rand()%1000)*1.0/1000;
+    glColor3f(r, g, b);
+//            printf("%f,%f,%f\n",r,g,b);
+}
+
 //set up menu
 void menu(int value){
 //    printf("menu action\n");
@@ -109,12 +123,7 @@ void menu(int value){
             break;
             
         case 11:
-            float r, g, b;
-            r = (rand()%1000)*1.0/1000;
-            g = (rand()%1000)*1.0/1000;
-            b = (rand()%1000)*1.0/1000;
-            glColor3f(r, g, b);
-            printf("%f,%f,%f\n",r,g,b);
+            randomColor();
             break;
          
         case 5: // point
@@ -134,7 +143,7 @@ void menu(int value){
             break;
             
         case 9:
-            exit(0);
+            exit();
             break;
             
         case 10:
@@ -175,8 +184,8 @@ int main(int argc, char** argv){
     
    // glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(0, 0);
-    glutInitWindowSize(600, 600);
-    glutCreateWindow("JJ");
+    glutInitWindowSize(WINDOW_SIZE, WINDOW_SIZE);
+    glutCreateWindow("Paint");
     
     initMenu();
     
@@ -186,7 +195,7 @@ int main(int argc, char** argv){
     
     glutMotionFunc(motion);
     
-    gluOrtho2D(0, 600, 0, 600);
+    gluOrtho2D(0, WINDOW_SIZE, 0, WINDOW_SIZE);
     
     timerRedisplay(0);
     
@@ -196,8 +205,10 @@ int main(int argc, char** argv){
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0, 0, 1);
     glPointSize(2);
+    pStack = new std::stack<Point>();
     
     glutMainLoop();
     
-    return (0);
+    exit();
+    return 0;
 }
