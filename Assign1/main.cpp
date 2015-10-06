@@ -107,6 +107,15 @@ void menu(int value){
         case 4:
             glColor3f(1, 1, 0);
             break;
+            
+        case 11:
+            float r, g, b;
+            r = (rand()%1000)*1.0/1000;
+            g = (rand()%1000)*1.0/1000;
+            b = (rand()%1000)*1.0/1000;
+            glColor3f(r, g, b);
+            printf("%f,%f,%f\n",r,g,b);
+            break;
          
         case 5: // point
             h = &ph;
@@ -144,6 +153,7 @@ void initMenu(){
     glutAddMenuEntry("Green", 2);
     glutAddMenuEntry("Purple", 3);
     glutAddMenuEntry("Yellow", 4);
+    glutAddMenuEntry("Random Color", 11);
     
     int subShape = glutCreateMenu(menu);
     glutAddMenuEntry("Point", 5);
@@ -182,7 +192,7 @@ int main(int argc, char** argv){
     
     glClearColor(1, 1, 1, 1);
     
-    h = &lh;
+    h = &ph;
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0, 0, 1);
     glPointSize(2);
