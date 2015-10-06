@@ -132,6 +132,10 @@ public:
         
         glBegin(GL_POINTS);
         
+        if(!xincrease) {
+            drawPoint(y0, x0);
+        } // draw single dot when double click
+        
         while(x0 < x1) {
             if(d <= 0) {
                 d += einc;
