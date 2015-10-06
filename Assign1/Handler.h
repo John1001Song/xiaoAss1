@@ -48,6 +48,8 @@ private:
 
 class LineHandler : public Handler {
 public:
+    
+    /*
     void draw1(std::stack<Point>* stack) {
 //        printf("stack size : %d\n", (int)stack->size());
         if(stack->size() < 2) {
@@ -77,6 +79,8 @@ public:
         glEnd();
         glFlush();
     }
+    
+    */
     
     void draw(std::stack<Point>* stack) {
         if(stack->size() < 2) {
@@ -173,11 +177,36 @@ private:
 
 class RectangleHandler : public Handler {
 public:
-    void draw1(std::stack<Point>* stack) {
+    void draw(std::stack<Point>* stack) {
         if(stack->size() < 2) {
             return;
         }
 
+        Point p2 = stack->top();
+        stack->pop();
+        Point p1 = stack->top();
+        stack->pop();
+        
+        Point eP1 = Point(p1.x, p2.y);
+        Point eP2 = Point(p2.x, p1.y);
+        
+        LineHandler lineForRec = *new LineHandler();
+        
+        stack->push(eP1);
+        stack->push(p1);
+        lineForRec.draw(stack);
+        
+        stack->push(p1);
+        stack->push(eP2);
+        lineForRec.draw(stack);
+        
+        stack->push(eP2);
+        stack->push(p2);
+        lineForRec.draw(stack);
+        
+        stack->push(p2);
+        stack->push(eP1);
+        lineForRec.draw(stack);
         
     }
 

@@ -182,7 +182,7 @@ int main(int argc, char** argv){
     
     glClearColor(1, 1, 1, 1);
     
-    h = &lh;
+    h = &ph;
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0, 0, 1);
     glPointSize(2);
