@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		48106BB01BC3628000C6C1BF /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48106BAF1BC3628000C6C1BF /* GLUT.framework */; };
 		48106BB21BC3628700C6C1BF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48106BB11BC3628700C6C1BF /* OpenGL.framework */; };
-		48F22C0A1BC1FE28009664E7 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F22C081BC1FE28009664E7 /* Point.cpp */; };
 		E8B702001BC0700E003FC0E9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8B701FE1BC0700E003FC0E9 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		48106BAF1BC3628000C6C1BF /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		48106BB11BC3628700C6C1BF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		48F22C061BC1FD1D009664E7 /* Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
-		48F22C081BC1FE28009664E7 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		48F22C091BC1FE28009664E7 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
 		E8B701ED1BC06EA8003FC0E9 /* Assign1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assign1; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B701FE1BC0700E003FC0E9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 			children = (
 				E8B701FE1BC0700E003FC0E9 /* main.cpp */,
 				48F22C061BC1FD1D009664E7 /* Handler.h */,
-				48F22C081BC1FE28009664E7 /* Point.cpp */,
 				48F22C091BC1FE28009664E7 /* Point.h */,
 			);
 			path = Assign1;
@@ -133,7 +130,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F22C0A1BC1FE28009664E7 /* Point.cpp in Sources */,
 				E8B702001BC0700E003FC0E9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
